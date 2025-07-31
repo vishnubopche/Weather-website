@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Explorer</title>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#3a7bd5" />
+</head>
+<body>
+  <nav class="navbar">
+  <div class="logo">🌦️ WeatherScope</div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li class="dropdown">
+      <a href="#">Explore ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="#searchResult" onclick="getCurrentLocation()">📍 Current Location</a></li>
+        <li><a href="#weatherList" onclick="fetchWeather('Mumbai')">🌇 Mumbai</a></li>
+        <li><a href="#weatherList" onclick="fetchWeather('Delhi')">🏙️ Delhi</a></li>
+        <li><a href="#weatherList" onclick="fetchWeather('New York')">🗽 New York</a></li>
+        <li><a href="#searchResult">📅 3-Day Forecast</a></li>
+        <li><a href="#tips">🧠 Weather Safety Tips</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ <header>
+  <h1>🌦️ Weather Explorer</h1>
+  <p>Search weather for any city worldwide</p>
+  <!-- <button id="toggleTheme">🌓 Toggle Dark Mode</button> -->
+ </header>
+  <main class="container">
+    <div class="search-section">
+      <input type="text" id="cityInput" placeholder="🔍 Enter city name" />
+      <button onclick="getWeather()">Search</button>
+    </div>
+
+    <section id="searchResult" class="weather-section"></section>
+
+    <h2 class="section-title">🌍 Popular Cities</h2>
+    <section id="weatherList" class="weather-section"></section>
+  </main>
+  
+  <section id="tips" class="tips">
+  <h2>🧠 Weather Safety Tips</h2>
+  <ul id="tipsList">
+    <li>Stay hydrated during heatwaves.</li>
+    <li>Carry an umbrella during monsoon.</li>
+    <li>Wear layers in cold climates.</li>
+    <li>Check weather before long drives.</li>
+    <li>Stay indoors during storms or lightning.</li>
+  </ul>
+ </section>
+ 
+
+  <footer class="quote-slider">
+  <div class="quotes" id="quoteBox">
+    <div>
+      “The sun always shines above the clouds.” – Paul F. Davis<br>
+      🌞 “सूरज हमेशा बादलों के ऊपर चमकता है।” – पॉल एफ. डेविस
+    </div>
+    <div>
+      “Wherever you go, no matter what the weather, always bring your own sunshine.” – Anthony J. D’Angelo<br>
+      ☀️ “आप जहाँ भी जाएँ, मौसम कैसा भी हो, अपनी धूप साथ ले जाएँ।” – एंथनी जे. डी'एंजेलो
+    </div>
+    <div>
+      “To appreciate the beauty of a snowflake it is necessary to stand out in the cold.” – Aristotle<br>
+      ❄️ “बर्फ के टुकड़े की सुंदरता को समझने के लिए ठंड में खड़ा होना जरूरी है।” – अरस्तू
+    </div>
+    <div>
+      “Nature does not hurry, yet everything is accomplished.” – Lao Tzu<br>
+      🍃 “प्रकृति कभी जल्दी नहीं करती, फिर भी सब कुछ पूरा हो जाता है।” – लाओ त्ज़ू
+    </div>
+    <div>
+      “Adopt the pace of nature: her secret is patience.” – Ralph Waldo Emerson<br>
+      🌿 “प्रकृति की गति अपनाओ: उसका रहस्य धैर्य है।” – राल्फ वाल्डो इमर्सन
+    </div>
+  </div>
+</footer>
+
+
+  <footer>
+    <p>Powered by <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI.com 2025</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Register service worker -->
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("service-worker.js")
+      .then((reg) => console.log("✅ Service Worker registered!", reg))
+      .catch((err) => console.error("❌ SW registration failed:", err));
+  }
+</script>
+
+</body>
+</html>

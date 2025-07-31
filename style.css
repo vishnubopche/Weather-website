@@ -64,13 +64,20 @@ header p {
   font-weight: bold;
 }
 
-#searchInput {
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+a:hover {
+    color: #67cff1;
+}
+/* #searchInput {
   padding: 8px 12px;
   border-radius: 5px;
   border: none;
   outline: none;
   width: 200px;
-}
+} */
 
 .nav-links {
   list-style: none;
@@ -97,7 +104,7 @@ header p {
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block;
+  display: block ;
 }
 
 .dropdown-menu li {

@@ -101,6 +101,7 @@ a:hover {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   border-radius: 6px;
   z-index: 100;
+  
 }
 
 .dropdown:hover .dropdown-menu {
@@ -108,8 +109,12 @@ a:hover {
 }
 
 .dropdown-menu li {
-  padding: 5px 10px;
-  white-space: nowrap;
+  padding: 2px 8px;
+  white-space: wrap;
+  font-size: 0.7rem;
+  
+  
+  
 }
 
 .dropdown-menu li a {
@@ -127,9 +132,9 @@ a:hover {
   padding: 20px;
   background-color: #e0f7fa;
   border-radius: 12px;
-  margin: 10px  px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-display: flex;
+  margin: 10px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
   flex-direction: column;
   align-items: center;
   
